@@ -1,0 +1,18 @@
+<%= form_with(model: url_map, local: true) do |form| %>
+  <%= form.text_field :to %>
+  <% if url_map.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(url_map.errors.count, "error") %> prohibited this url_map from being saved:</h2>
+
+      <ul>
+      <% url_map.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
